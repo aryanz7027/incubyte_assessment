@@ -62,5 +62,10 @@ RSpec.describe StringCalculator do
     it 'Test for Numbers Greater Than 1000' do
       expect(StringCalculator.add("1000,2000")).to eq(1000) #(Ignore Numbers Greater Than 1000)
     end
+
+    it "Tests if the calcultor can handle multiple numbers with mixed delimiters." do
+      expect(StringCalculator.add("//[***][#]\n1***2#3")).to eq(6)
+    end
+
   end
 end
