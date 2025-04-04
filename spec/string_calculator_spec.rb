@@ -80,5 +80,10 @@ RSpec.describe StringCalculator do
       numbers = (1..1100).to_a.join(',')
       expect(StringCalculator.add(numbers)).to eq(500500)
     end
+
+    it "Test for Multiple Line Breaks Between Numbers" do
+      expect(StringCalculator.add("1\n\n2")).to eq(3)
+    end
+
   end
 end
