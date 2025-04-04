@@ -54,5 +54,13 @@ RSpec.describe StringCalculator do
     it 'raises an error if delimiter is not specified correctly' do
       expect { StringCalculator.add("//\n1,2") }.to raise_error(ArgumentError)
     end
+
+    it 'Tests for Large Numbers' do
+      expect(StringCalculator.add("1000,1000")).to eq(2000)
+    end
+
+    it 'Test for Numbers Greater Than 1000' do
+      expect(StringCalculator.add("1000,2000")).to eq(1000) #(Ignore Numbers Greater Than 1000)
+    end
   end
 end

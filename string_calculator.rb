@@ -36,6 +36,6 @@ class StringCalculator
       raise "negative numbers not allowed: #{negatives.join(',')}"
     end
 
-    nums.map(&:to_i).sum
+    nums.map(&:to_i).select { |num| num <= 1000 }.sum
   end
 end
