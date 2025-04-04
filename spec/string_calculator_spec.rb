@@ -70,8 +70,14 @@ RSpec.describe StringCalculator do
     it "Tests if calculator can handle Delimiters with special characters" do
       expect(StringCalculator.add("//[$%^]\n1$%^2$%^3")).to eq(6)
     end
+
     it "Tests if calculator can handle long string with thousands of numbers" do
       numbers = (1..1000).to_a.join(',')
+      expect(StringCalculator.add(numbers)).to eq(500500)
+    end
+
+    it "Tests if calculator can handle long string with thousands of numbers ignoring numbers greater than 1000" do
+      numbers = (1..1100).to_a.join(',')
       expect(StringCalculator.add(numbers)).to eq(500500)
     end
   end
